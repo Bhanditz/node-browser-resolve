@@ -81,7 +81,7 @@ function find_shims_in_package(pkgJson, cur_path, shims, browser) {
 
 // paths is mutated
 // load shims from first package.json file found
-function load_shims(paths, browser, cb) {
+function load_shims(paths, browser, readFile, cb) {
   // identify if our file should be replaced per the browser field
   // original filename|id -> replacement
   var shims = Object.create(null);
@@ -94,7 +94,7 @@ function load_shims(paths, browser, cb) {
 
     var pkg_path = path.join(cur_path, 'package.json');
 
-    fs.readFile(pkg_path, 'utf8', function(err, data) {
+    readFile(pkg_path, 'utf8', function(err, data) {
       if (err) {
         // ignore paths we can't open
         // avoids an exists check
@@ -230,7 +230,10 @@ function resolve(id, opts, cb) {
   });
 
   // we must always load shims because the browser field could shim out a module
-  load_shims(paths, opts.browser, function(err, shims) {
+  load_shims(paths, opts.browser, opts.readFile || fs.readFile, function(
+    err,
+    shims
+  ) {
     if (err) {
       return cb(err);
     }
