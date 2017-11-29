@@ -86,9 +86,9 @@ path-parse@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.5.tgz#3c1adf871ea9cd6c9431b6ea2bd74a0ff055c4c1"
 
-resolve@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.4.0.tgz#a75be01c53da25d934a98ebd0e4c4a7312f92a86"
+resolve@lbogdan/resolve:
+  version "1.5.0"
+  resolved "https://codeload.github.com/lbogdan/resolve/tar.gz/f3b7354c910bf70a41a3039d9cfeb9324887b27c"
   dependencies:
     path-parse "^1.0.5"
 

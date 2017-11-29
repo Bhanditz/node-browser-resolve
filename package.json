@@ -1,6 +1,6 @@
 {
   "name": "browser-resolve",
-  "version": "1.11.4",
+  "version": "1.11.5",
   "description": "resolve which handles browser field support in package.json",
   "main": "index.js",
   "files": ["index.js", "empty.js"],
@@ -15,7 +15,7 @@
   "author": "Roman Shtylman <shtylman@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "resolve": "^1.4.0"
+    "resolve": "lbogdan/resolve"
   },
   "devDependencies": {
     "mocha": "1.14.0"
